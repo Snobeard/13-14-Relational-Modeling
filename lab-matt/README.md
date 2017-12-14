@@ -41,7 +41,22 @@ MONGODB_URI=mongodb://localhost/testing
 2. `jest`
 
 ## Server Endpoints
-1. `POST /api/dogs` - Create a new dog data
-2. `GET /api/dogs/<id>` - retrieve a saved dog based on ID
-3. `PUT /api/dogs/<id>` - update a saved dog based on ID
-4. `DELETE /api/dogs/<id>` - delete a saved dog based on ID
+1. `POST /api/house` - Create a new dog data
+2. `GET /api/house/<id>` - retrieve a saved dog based on ID
+3. `PUT /api/house/<id>` - update a saved dog based on ID
+4. `DELETE /api/house/<id>` - delete a saved dog based on ID
+
+## Tests
+`POST /api/house` => 200 status code if no issues and the house was submitted </br>
+`POST /api/house` => 400 status code if the data is incomplete </br>
+
+`GET /api/house` => 404 status code if no houses were listed </br>
+`GET /api/house` => 200 status code if a response with an array of houses </br>
+`GET /api/house/<id>` => 200 status code if the house was retrieved with the given id </br>
+`GET /api/house/<id>` => 404 status code if no house is found with the given id </br>
+
+`PUT /api/house/<id>` => 200 status code if no error and data is updated </br>
+`PUT /api/house/<id>` => 404 status code if no house was found with the given id  </br>
+
+`DELETE /api/house/<id>` => 204 status code if id found and data removed </br>
+`DELETE /api/house/<id>` => 404 status code if no id is found </br>
