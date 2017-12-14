@@ -4,11 +4,11 @@ const log = require('../lib/logger');
 
 module.exports = (error, request, response, next) => {
   // ================ HTTP ERRORS ================
-  log('info', `__MIDDLEWARE_HANDLING_ERROR__ `);
+  log('info', `__MIDDLEWARE_IS_HANDLING_ERROR__ `);
   log('error', error);
 
   if (error.status) {
-    log('info', `Responding with a ${error.status} status`);
+    log('info', `Responding with a ${error.status} status due to: '${error.message}'`);
     return response.sendStatus(error.status);
   }
   

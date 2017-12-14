@@ -69,6 +69,16 @@ describe('/api/house', () => {
 
   // ===================== GET =====================
   describe('GET /api/house', () => {
+    test('GET should respond with 404 if no houses are listed', () => {
+      return superagent.get(`${apiURL}`)
+        .then(response => {
+          console.log('this should not show', response);
+        })
+        .catch(error => {
+          expect(error.status).toEqual(404);
+        });
+    });
+
     test('GET should respond with 200 and array of houses, up to 10', () => {
       return houseMany(100)
         .then(() => {
@@ -81,15 +91,6 @@ describe('/api/house', () => {
         });
     });
 
-    test('GET should respond with 404 if id is not found', () => {
-      return superagent.get(`${apiURL}/moosejaw`)
-        .then(response => {
-          console.log('this should not show', response);
-        })
-        .catch(error => {
-          expect(error.status).toEqual(404);
-        });
-    });
   });
 
   describe('GET /api/house/:id', () => {
