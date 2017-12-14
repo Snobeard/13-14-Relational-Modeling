@@ -35,7 +35,7 @@ describe('/api/house', () => {
   describe('POST /api/house', () => {
     test('POST should respond with 200 and data if no error', () => {
       let housePost = {
-        name: `${faker.address.streetSuffix()}_${faker.name.jobArea()}`,
+        name: `myHouse`,
         stories: faker.random.number(20),
         climate: faker.random.arrayElement(['Hot', 'Cold', 'Sunny', 'Rainy', 'Desert']),
       };
@@ -53,6 +53,24 @@ describe('/api/house', () => {
         });
     });
     
+    test('POST should respond with 409 if there is a duplicate name', () => {
+      return houseCreate()
+        .then(house => {
+          return superagent.post(`${apiURL}`)
+            .send({
+              name: house.name,
+              stories: house.stories,
+              climate: house.climate,
+            });
+        })
+        .then(response => {
+          expect(response).toEqual('nothing because this will not show');
+        })
+        .catch(error => {
+          expect(error.status).toEqual(409);
+        });
+    });
+
     test('POST should respond with 400 status code if there is an incomplete object', () => {
       let house = {stories: 10};
       
