@@ -6,25 +6,9 @@ const faker = require('faker');
 const superagent = require('superagent');
 const House = require('../model/house');
 const server = require('../lib/server');
-let incrementer = 0;
+const houseMock = require('./lib/house-mock');
 
-const apiURL = `http://localhost:${PORT}/api/house`;
-
-const houseCreate = () => {
-  incrementer ++;
-
-  return new House({
-    name: `${incrementer}: ${faker.address.streetSuffix()}_${faker.name.jobArea()}`,
-    stories: faker.random.number(20),
-    climate: faker.random.arrayElement(['Hot', 'Cold', 'Sunny', 'Rainy', 'Desert']),
-  }).save();
-};
-
-const houseMany = (amount) => {
-  return Promise.all(new Array(amount)
-    .fill(0)
-    .map(() => houseCreate()));
-};
+const __API_URL__ = `http://localhost:${PORT}/api/house`;
 
 describe('/api/house', () => {
   beforeAll(server.start);
@@ -40,7 +24,7 @@ describe('/api/house', () => {
         climate: faker.random.arrayElement(['Hot', 'Cold', 'Sunny', 'Rainy', 'Desert']),
       };
 
-      return superagent.post(`${apiURL}`)
+      return superagent.post(`${__API_URL__}`)
         .send(housePost)
         .then(response => {
           expect(response.status).toEqual(200);
@@ -54,9 +38,9 @@ describe('/api/house', () => {
     });
     
     test('POST should respond with 409 if there is a duplicate name', () => {
-      return houseCreate()
+      return houseMock.create()
         .then(house => {
-          return superagent.post(`${apiURL}`)
+          return superagent.post(`${__API_URL__}`)
             .send({
               name: house.name,
               stories: house.stories,
@@ -74,7 +58,7 @@ describe('/api/house', () => {
     test('POST should respond with 400 status code if there is an incomplete object', () => {
       let house = {stories: 10};
       
-      return superagent.post(`${apiURL}`)
+      return superagent.post(`${__API_URL__}`)
         .send(house)
         .then(response => {
           console.log('this should not show', response);
@@ -88,7 +72,7 @@ describe('/api/house', () => {
   // ===================== GET =====================
   describe('GET /api/house', () => {
     test('GET should respond with 404 if no houses are listed', () => {
-      return superagent.get(`${apiURL}`)
+      return superagent.get(`${__API_URL__}`)
         .then(response => {
           console.log('this should not show', response);
         })
@@ -98,9 +82,9 @@ describe('/api/house', () => {
     });
 
     test('GET should respond with 200 and array of houses, up to 10', () => {
-      return houseMany(100)
+      return houseMock.many(100)
         .then(() => {
-          return superagent.get(`${apiURL}`);
+          return superagent.get(`${__API_URL__}`);
         })
         .then(response => {
           expect(response.status).toEqual(200);
@@ -114,10 +98,10 @@ describe('/api/house', () => {
     test('GET should respond with 200 and data if no error', () => {
       let houseToTest = null;
 
-      return houseCreate()
+      return houseMock.create()
         .then(house => {
           houseToTest = house;
-          return superagent.get(`${apiURL}/${house._id}`);
+          return superagent.get(`${__API_URL__}/${house._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(200);
@@ -132,7 +116,7 @@ describe('/api/house', () => {
     });
 
     test('GET should respond with 404 if id is not found', () => {
-      return superagent.get(`${apiURL}/moosejaw`)
+      return superagent.get(`${__API_URL__}/moosejaw`)
         .then(response => {
           console.log('this should not show', response);
         })
@@ -147,10 +131,10 @@ describe('/api/house', () => {
     test('PUT should respond with 200 and data if no error and data should be updated', () => {
       let housePut = null;
 
-      return houseCreate()
+      return houseMock.create()
         .then(house => {
           housePut = house;
-          return superagent.put(`${apiURL}/${house._id}`)
+          return superagent.put(`${__API_URL__}/${house._id}`)
             .send({name: 'BIG MANSION'});
         })
         .then(response => {
@@ -164,7 +148,7 @@ describe('/api/house', () => {
     });
 
     test('PUT should respond with 404 if id is not found', () => {
-      return superagent.put(`${apiURL}/moosejaw`)
+      return superagent.put(`${__API_URL__}/moosejaw`)
         .then(response => {
           console.log('this should not show', response);
         })
@@ -174,16 +158,11 @@ describe('/api/house', () => {
     });
     
     test('PUT should respond with 409 if you are trying to use a name that already exists', () => {
-      let firstHouse = null;
-      
-      return houseCreate()
-        .then(house => {
-          houseCreate().then(house => firstHouse = house);
-          return superagent.post(`${apiURL}`)
+      return houseMock.many(2)
+        .then(houses => {
+          return superagent.put(`${__API_URL__}/${houses[0]._id}`)
             .send({
-              name: house.name,
-              stories: house.stories,
-              climate: house.climate,
+              name: houses[1].name,
             });
         })
         .then(response => {
@@ -199,9 +178,9 @@ describe('/api/house', () => {
   describe('DELETE /api/house/:id', () => {
     test('DELETE should respond with 204 and data if no error', () => {
 
-      return houseCreate()
+      return houseMock.create()
         .then(house => {
-          return superagent.delete(`${apiURL}/${house._id}`);
+          return superagent.delete(`${__API_URL__}/${house._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(204);
@@ -209,7 +188,7 @@ describe('/api/house', () => {
     });
 
     test('DELETE should respond with 404 if id is not found', () => {
-      return superagent.delete(`${apiURL}/moosejaw`)
+      return superagent.delete(`${__API_URL__}/moosejaw`)
         .then(response => {
           console.log('this should not show', response);
         })

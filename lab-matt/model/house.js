@@ -19,7 +19,13 @@ const houseSchema = mongoose.Schema({
   timestamp: {
     type: Date,
     default: () => new Date(),  
-  }, 
+  },
+  rooms: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'room',
+  }], 
+},{
+  usePushEach: true,
 });
 
 module.exports = mongoose.model('house', houseSchema);
