@@ -4,49 +4,57 @@ require('./lib/setup');
 
 const faker = require('faker');
 const superagent = require('superagent');
-const House = require('../model/house');
 const server = require('../lib/server');
+
+const roomMock = require('./lib/room-mock');
 const houseMock = require('./lib/house-mock');
 
-const PORT = process.env.PORT;
+const __API_URL__ = `http://localhost:${process.env.PORT}/api/room`;
 
-const __API_URL__ = `http://localhost:${PORT}/api/house`;
-
-describe('/api/house', () => {
+describe('/api/room', () => {
   beforeAll(server.start);
   afterAll(server.stop);
-  afterEach(() => House.remove({}));
+  afterEach(roomMock.remove);
 
   // ===================== POST =====================
-  describe('POST /api/house', () => {
+  describe('POST /api/room', () => {
     test('POST should respond with 200 and data if no error', () => {
-      let houseToPost = {
-        name: `myHouse`,
-        stories: faker.random.number(20),
-        climate: faker.random.arrayElement(['Hot', 'Cold', 'Sunny', 'Rainy', 'Desert']),
+      let roomToPost = {
+        name: faker.random.arrayElement(['bedroom', 'bathroom', 'master bedroom', 'garage', 'kitchen', 'dining area', 'living room']),
+        squareFeet: faker.random.number({min: 100, max: 1000}),
+        flooring: faker.random.arrayElement(['hardwood', 'carpet', 'granite', 'tile', 'heated wood', 'heated tile']),
       };
      
-      return superagent.post(__API_URL__)
-        .send(houseToPost)
-        .then(response => {
-          expect(response.status).toEqual(200);
-          expect(response.body._id).toBeTruthy();
-          expect(response.body.timestamp).toBeTruthy();
+      return houseMock.create()
+        .then(house => {
+          roomToPost.house = house._id;
           
-          expect(response.body.name).toEqual(houseToPost.name);
-          expect(response.body.stories).toEqual(houseToPost.stories);
-          expect(response.body.climate).toEqual(houseToPost.climate);
+          return superagent.post(__API_URL__)
+            .send(roomToPost)
+            .then(response => {
+              expect(response.status).toEqual(200);
+              expect(response.body._id).toBeTruthy();
+              expect(response.body.timestamp).toBeTruthy();
+              
+              expect(response.body.name).toEqual(roomToPost.name);
+              expect(response.body.stories).toEqual(roomToPost.stories);
+              expect(response.body.climate).toEqual(roomToPost.climate);
+
+              expect(response.body.house).toEqual(roomToPost.house._id);
+            });
         });
     });
     
     test('POST should respond with 409 if there is a duplicate name', () => {
-      return houseMock.create()
-        .then(house => {
+      return roomMock.create()
+        .then(mockObject => {
           return superagent.post(__API_URL__)
             .send({
-              name: house.name,
-              stories: house.stories,
-              climate: house.climate,
+              name: mockObject.room.name,
+              squareFeet: mockObject.room.squareFeet,
+              flooring: mockObject.room.flooring,
+              house: mockObject.room.house,
+              _id: mockObject.room._id,
             });
         })
         .then(response => {
@@ -58,10 +66,10 @@ describe('/api/house', () => {
     });
 
     test('POST should respond with 400 status code if there is an incomplete object', () => {
-      let house = {stories: 10};
+      let room = {name: 'kitchen'};
       
       return superagent.post(__API_URL__)
-        .send(house)
+        .send(room)
         .then(response => {
           console.log('this should not show', response);
         })
@@ -72,7 +80,7 @@ describe('/api/house', () => {
   });
 
   // ===================== GET =====================
-  describe('GET /api/house', () => {
+  describe('GET /api/room', () => {
     test('GET should respond with 404 if no houses are listed', () => {
       return superagent.get(__API_URL__)
         .then(response => {
@@ -84,7 +92,7 @@ describe('/api/house', () => {
     });
 
     test('GET should respond with 200 and array of houses, up to 10', () => {
-      return houseMock.many(100)
+      return roomMock.many(100)
         .then(() => {
           return superagent.get(__API_URL__);
         })
@@ -92,28 +100,30 @@ describe('/api/house', () => {
           expect(response.status).toEqual(200);
 
           expect(response.body).toBeInstanceOf(Array);
+          expect(response.body.length).toEqual(10);
         });
     });
   });
 
-  describe('GET /api/house/:id', () => {
+  describe('GET /api/room/:id', () => {
     test('GET should respond with 200 and data if no error', () => {
-      let houseToTest = null;
+      let roomAndHouse = null;
 
-      return houseMock.create()
-        .then(house => {
-          houseToTest = house;
-          return superagent.get(`${__API_URL__}/${house._id}`);
+      return roomMock.create()
+        .then(mockObject => {
+          roomAndHouse = mockObject;
+          return superagent.get(`${__API_URL__}/${mockObject.room._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(200);
 
-          expect(response.body._id).toEqual(houseToTest._id.toString());
+          expect(response.body._id).toEqual(roomAndHouse.room._id.toString());
           expect(response.body.timestamp).toBeTruthy();
           
-          expect(response.body.name).toEqual(houseToTest.name);
-          expect(response.body.stories).toEqual(houseToTest.stories);
-          expect(response.body.climate).toEqual(houseToTest.climate);
+          expect(response.body.name).toEqual(roomAndHouse.room.name);
+          expect(response.body.squareFeet).toEqual(roomAndHouse.room.squareFeet);
+          expect(response.body.flooring).toEqual(roomAndHouse.room.flooring);
+          expect(response.body.house).toEqual(roomAndHouse.house._id.toString());
         });
     });
 
@@ -129,11 +139,11 @@ describe('/api/house', () => {
   });
 
   // ===================== PUT =====================
-  describe('PUT /api/house/:id', () => {
+  describe('PUT /api/room/:id', () => {
     test('PUT should respond with 200 and data if no error and data should be updated', () => {
       let housePut = null;
 
-      return houseMock.create()
+      return roomMock.create()
         .then(house => {
           housePut = house;
           return superagent.put(`${__API_URL__}/${house._id}`)
@@ -160,7 +170,7 @@ describe('/api/house', () => {
     });
     
     test('PUT should respond with 409 if you are trying to use a name that already exists', () => {
-      return houseMock.many(2)
+      return roomMock.many(2)
         .then(houses => {
           return superagent.put(`${__API_URL__}/${houses[0]._id}`)
             .send({
@@ -177,10 +187,10 @@ describe('/api/house', () => {
   });
 
   // ===================== DELETE =====================
-  describe('DELETE /api/house/:id', () => {
+  describe('DELETE /api/room/:id', () => {
     test('DELETE should respond with 204 and data if no error', () => {
 
-      return houseMock.create()
+      return roomMock.create()
         .then(house => {
           return superagent.delete(`${__API_URL__}/${house._id}`);
         })

@@ -1976,3 +1976,354 @@
 {"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOneAndRemove (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:2248:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T03:34:25.897Z"}
 {"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T03:34:25.897Z"}
 {"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T03:34:25.898Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T03:37:37.919Z"}
+{"level":"info","message":"Processing: POST On: /api/house","timestamp":"2017-12-15T03:37:37.945Z"}
+{"level":"info","message":"==NAME==: myHouse","timestamp":"2017-12-15T03:37:37.955Z"}
+{"level":"info","message":"==STORIES==: 13","timestamp":"2017-12-15T03:37:37.955Z"}
+{"level":"info","message":"==CLIMATE==: Desert","timestamp":"2017-12-15T03:37:37.955Z"}
+{"level":"info","message":"==_ID==: 5a3343818a58c14f271e2417","timestamp":"2017-12-15T03:37:37.970Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 19:37:37 GMT-0800 (PST)","timestamp":"2017-12-15T03:37:37.970Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T03:37:37.970Z"}
+{"level":"info","message":"Processing: POST On: /api/house","timestamp":"2017-12-15T03:37:37.984Z"}
+{"level":"info","message":"==NAME==: 1: Inlet_Communications","timestamp":"2017-12-15T03:37:37.984Z"}
+{"level":"info","message":"==STORIES==: 20","timestamp":"2017-12-15T03:37:37.985Z"}
+{"level":"info","message":"==CLIMATE==: Sunny","timestamp":"2017-12-15T03:37:37.985Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:37.987Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.houses index: name_1 dup key: { : \"1: Inlet_Communications\" }","op":{"name":"1: Inlet_Communications","stories":20,"climate":"Sunny","_id":"5a3343818a58c14f271e2419","rooms":[],"timestamp":"2017-12-15T03:37:37.985Z","__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T03:37:37.988Z"}
+{"level":"info","message":"Processing: POST On: /api/house","timestamp":"2017-12-15T03:37:37.991Z"}
+{"level":"info","message":"==NAME==: undefined","timestamp":"2017-12-15T03:37:37.991Z"}
+{"level":"info","message":"==STORIES==: 10","timestamp":"2017-12-15T03:37:37.991Z"}
+{"level":"info","message":"==CLIMATE==: undefined","timestamp":"2017-12-15T03:37:37.991Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:37.992Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/house-router.js:20:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T03:37:37.992Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T03:37:37.992Z"}
+{"level":"info","message":"Processing: GET On: /api/house","timestamp":"2017-12-15T03:37:37.996Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:37.999Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at House.find.limit.then.allHouses (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/house-router.js:41:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T03:37:38.000Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T03:37:38.000Z"}
+{"level":"info","message":"Processing: GET On: /api/house","timestamp":"2017-12-15T03:37:38.047Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T03:37:38.050Z"}
+{"level":"info","message":"Processing: GET On: /api/house/5a3343828a58c14f271e247e","timestamp":"2017-12-15T03:37:38.056Z"}
+{"level":"info","message":"==HOUSE==: { _id: 5a3343828a58c14f271e247e,\n  name: '102: Courts_Solutions',\n  stories: 13,\n  climate: 'Sunny',\n  __v: 0,\n  rooms: [],\n  timestamp: 2017-12-15T03:37:38.055Z }","timestamp":"2017-12-15T03:37:38.060Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T03:37:38.060Z"}
+{"level":"info","message":"Processing: GET On: /api/house/moosejaw","timestamp":"2017-12-15T03:37:38.063Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:38.064Z"}
+{"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOne (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1504:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T03:37:38.064Z"}
+{"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T03:37:38.064Z"}
+{"level":"info","message":"Processing: PUT On: /api/house/5a3343828a58c14f271e247f","timestamp":"2017-12-15T03:37:38.068Z"}
+{"level":"info","message":"PUT - responding with a 200 status","timestamp":"2017-12-15T03:37:38.073Z"}
+{"level":"info","message":"Processing: PUT On: /api/house/moosejaw","timestamp":"2017-12-15T03:37:38.076Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:38.077Z"}
+{"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOneAndUpdate (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:2153:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T03:37:38.077Z"}
+{"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T03:37:38.077Z"}
+{"level":"info","message":"Processing: PUT On: /api/house/5a3343828a58c14f271e2480","timestamp":"2017-12-15T03:37:38.080Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:38.081Z"}
+{"message":"E11000 duplicate key error collection: testing.houses index: name_1 dup key: { : \"105: Mountain_Solutions\" }","name":"MongoError","stack":"MongoError: E11000 duplicate key error collection: testing.houses index: name_1 dup key: { : \"105: Mountain_Solutions\" }\n    at Function.Object.<anonymous>.MongoError.create (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongodb-core/lib/error.js:31:11)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongodb-core/lib/connection/pool.js:497:72\n    at authenticateStragglers (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongodb-core/lib/connection/pool.js:443:16)\n    at Connection.messageHandler (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongodb-core/lib/connection/pool.js:477:5)\n    at Socket.<anonymous> (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongodb-core/lib/connection/connection.js:331:22)\n    at Socket.emit (events.js:159:13)\n    at addChunk (_stream_readable.js:265:12)\n    at readableAddChunk (_stream_readable.js:252:11)\n    at Socket.Readable.push (_stream_readable.js:209:10)\n    at TCP.onread (net.js:598:20)","ok":0,"errmsg":"E11000 duplicate key error collection: testing.houses index: name_1 dup key: { : \"105: Mountain_Solutions\" }","code":11000,"codeName":"DuplicateKey","level":"error","timestamp":"2017-12-15T03:37:38.081Z"}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T03:37:38.082Z"}
+{"level":"info","message":"Processing: DELETE On: /api/house/5a3343828a58c14f271e2482","timestamp":"2017-12-15T03:37:38.084Z"}
+{"level":"info","message":"DELETE - responding with a 204 status","timestamp":"2017-12-15T03:37:38.086Z"}
+{"level":"info","message":"Processing: DELETE On: /api/house/moosejaw","timestamp":"2017-12-15T03:37:38.088Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T03:37:38.088Z"}
+{"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"house\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOneAndRemove (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:2248:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T03:37:38.088Z"}
+{"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T03:37:38.088Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T03:37:38.090Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T04:20:04.657Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T04:20:04.704Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T04:20:04.705Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T04:20:04.716Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T05:57:50.651Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T05:57:50.696Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T05:57:50.697Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T05:57:50.708Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T05:58:24.543Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T05:58:24.586Z"}
+{"level":"info","message":"==NAME==: living room","timestamp":"2017-12-15T05:58:24.596Z"}
+{"level":"info","message":"==STORIES==: undefined","timestamp":"2017-12-15T05:58:24.596Z"}
+{"level":"info","message":"==CLIMATE==: undefined","timestamp":"2017-12-15T05:58:24.596Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T05:58:24.596Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T05:58:24.597Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T05:58:24.597Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T05:58:24.607Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:00:25.906Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:00:25.949Z"}
+{"level":"info","message":"==NAME==: kitchen","timestamp":"2017-12-15T06:00:25.958Z"}
+{"level":"info","message":"==SQUAREFEET==: 444","timestamp":"2017-12-15T06:00:25.959Z"}
+{"level":"info","message":"==FLOORING==: heated tile","timestamp":"2017-12-15T06:00:25.959Z"}
+{"level":"info","message":"==_ID==: 5a3364f9c0a0c770995fb812","timestamp":"2017-12-15T06:00:25.960Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:00:25 GMT-0800 (PST)","timestamp":"2017-12-15T06:00:25.961Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:00:25.961Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:00:25.972Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:10:54.385Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:10:54.433Z"}
+{"level":"info","message":"==NAME==: garage","timestamp":"2017-12-15T06:10:54.443Z"}
+{"level":"info","message":"==SQUAREFEET==: 559","timestamp":"2017-12-15T06:10:54.443Z"}
+{"level":"info","message":"==FLOORING==: hardwood","timestamp":"2017-12-15T06:10:54.443Z"}
+{"level":"info","message":"==_ID==: 5a33676e47e978734f55aee7","timestamp":"2017-12-15T06:10:54.445Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:10:54 GMT-0800 (PST)","timestamp":"2017-12-15T06:10:54.445Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:10:54.445Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:10:54.589Z"}
+{"level":"info","message":"==NAME==: undefined","timestamp":"2017-12-15T06:10:54.590Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:10:54.590Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:10:54.590Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:10:54.591Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:10:54.591Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:10:54.592Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:10:54.597Z"}
+{"level":"info","message":"==NAME==: undefined","timestamp":"2017-12-15T06:10:54.598Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:10:54.598Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:10:54.598Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:10:54.598Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:10:54.598Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:10:54.598Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:10:54.602Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.602Z"}
+{"level":"info","message":"Processing: GET On: /api/room/undefined","timestamp":"2017-12-15T06:10:54.609Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.609Z"}
+{"level":"info","message":"Processing: GET On: /api/room/moosejaw","timestamp":"2017-12-15T06:10:54.612Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.612Z"}
+{"level":"info","message":"Processing: PUT On: /api/room/undefined","timestamp":"2017-12-15T06:10:54.616Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.616Z"}
+{"level":"info","message":"Processing: PUT On: /api/room/moosejaw","timestamp":"2017-12-15T06:10:54.619Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.619Z"}
+{"level":"info","message":"Processing: DELETE On: /api/room/undefined","timestamp":"2017-12-15T06:10:54.624Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.624Z"}
+{"level":"info","message":"Processing: DELETE On: /api/room/moosejaw","timestamp":"2017-12-15T06:10:54.627Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:10:54.627Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:10:54.629Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:11:03.549Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:11:03.598Z"}
+{"level":"info","message":"==NAME==: undefined","timestamp":"2017-12-15T06:11:03.608Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:11:03.608Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:11:03.608Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:11:03.609Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:11:03.609Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:11:03.609Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:11:03.622Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:12:21.064Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:12:21.112Z"}
+{"level":"info","message":"==NAME==: bedroom","timestamp":"2017-12-15T06:12:21.122Z"}
+{"level":"info","message":"==SQUAREFEET==: 269","timestamp":"2017-12-15T06:12:21.122Z"}
+{"level":"info","message":"==FLOORING==: heated tile","timestamp":"2017-12-15T06:12:21.122Z"}
+{"level":"info","message":"==_ID==: 5a3367c50707fe73f6a02cef","timestamp":"2017-12-15T06:12:21.123Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:12:21 GMT-0800 (PST)","timestamp":"2017-12-15T06:12:21.123Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:12:21.124Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:12:21.137Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:14:16.631Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:14:16.679Z"}
+{"level":"info","message":"==NAME==: dining area","timestamp":"2017-12-15T06:14:16.689Z"}
+{"level":"info","message":"==SQUAREFEET==: 360","timestamp":"2017-12-15T06:14:16.689Z"}
+{"level":"info","message":"==FLOORING==: carpet","timestamp":"2017-12-15T06:14:16.690Z"}
+{"level":"info","message":"==_ID==: 5a3368386ecb34746421739c","timestamp":"2017-12-15T06:14:16.691Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:14:16 GMT-0800 (PST)","timestamp":"2017-12-15T06:14:16.691Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:14:16.691Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:14:16.704Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:15:28.434Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:15:28.483Z"}
+{"level":"info","message":"==NAME==: garage","timestamp":"2017-12-15T06:15:28.494Z"}
+{"level":"info","message":"==SQUAREFEET==: 535","timestamp":"2017-12-15T06:15:28.494Z"}
+{"level":"info","message":"==FLOORING==: carpet","timestamp":"2017-12-15T06:15:28.494Z"}
+{"level":"info","message":"==_ID==: 5a336880f90d04750a0b1847","timestamp":"2017-12-15T06:15:28.495Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:15:28 GMT-0800 (PST)","timestamp":"2017-12-15T06:15:28.495Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:15:28.495Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:15:28.508Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:16:24.983Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:16:25.031Z"}
+{"level":"info","message":"==NAME==: bedroom","timestamp":"2017-12-15T06:16:25.041Z"}
+{"level":"info","message":"==SQUAREFEET==: 315","timestamp":"2017-12-15T06:16:25.041Z"}
+{"level":"info","message":"==FLOORING==: hardwood","timestamp":"2017-12-15T06:16:25.041Z"}
+{"level":"info","message":"==_ID==: 5a3368b970581a7538f4106b","timestamp":"2017-12-15T06:16:25.043Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:16:25 GMT-0800 (PST)","timestamp":"2017-12-15T06:16:25.043Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:16:25.043Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:16:25.056Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:16:42.618Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:16:42.666Z"}
+{"level":"info","message":"==NAME==: garage","timestamp":"2017-12-15T06:16:42.677Z"}
+{"level":"info","message":"==SQUAREFEET==: 777","timestamp":"2017-12-15T06:16:42.677Z"}
+{"level":"info","message":"==FLOORING==: hardwood","timestamp":"2017-12-15T06:16:42.677Z"}
+{"level":"info","message":"==_ID==: 5a3368cacc0d8e7563c60b5d","timestamp":"2017-12-15T06:16:42.679Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:16:42 GMT-0800 (PST)","timestamp":"2017-12-15T06:16:42.679Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:16:42.679Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:16:42.692Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:20:48.177Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:20:48.228Z"}
+{"level":"info","message":"==NAME==: bedroom","timestamp":"2017-12-15T06:20:48.237Z"}
+{"level":"info","message":"==SQUAREFEET==: 219","timestamp":"2017-12-15T06:20:48.238Z"}
+{"level":"info","message":"==FLOORING==: granite","timestamp":"2017-12-15T06:20:48.238Z"}
+{"level":"info","message":"==_ID==: 5a3369c0d2a7f776b82bfc6b","timestamp":"2017-12-15T06:20:48.240Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:20:48 GMT-0800 (PST)","timestamp":"2017-12-15T06:20:48.240Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:20:48.240Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:20:48.253Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:23:07.683Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:23:07.732Z"}
+{"level":"info","message":"==NAME==: garage","timestamp":"2017-12-15T06:23:07.742Z"}
+{"level":"info","message":"==SQUAREFEET==: 470","timestamp":"2017-12-15T06:23:07.742Z"}
+{"level":"info","message":"==FLOORING==: tile","timestamp":"2017-12-15T06:23:07.742Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:23:07.745Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.rooms index: _id_ dup key: { : ObjectId('5a336a4be1c14e775766d371') }","op":{"name":"garage","squareFeet":470,"flooring":"tile","house":"5a336a4be1c14e775766d370","_id":"5a336a4be1c14e775766d371","timestamp":"2017-12-15T06:23:07.742Z","__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T06:23:07.746Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:23:07.757Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:23:49.859Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:23:49.904Z"}
+{"level":"info","message":"==NAME==: garage","timestamp":"2017-12-15T06:23:49.914Z"}
+{"level":"info","message":"==SQUAREFEET==: 820","timestamp":"2017-12-15T06:23:49.914Z"}
+{"level":"info","message":"==FLOORING==: heated wood","timestamp":"2017-12-15T06:23:49.914Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:23:49.916Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.rooms index: _id_ dup key: { : ObjectId('5a336a75335a4177b6fb8572') }","op":{"name":"garage","squareFeet":820,"flooring":"heated wood","house":"5a336a75335a4177b6fb8571","_id":"5a336a75335a4177b6fb8572","timestamp":"2017-12-15T06:23:49.914Z","__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T06:23:49.917Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:23:49.928Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:24:59.590Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:24:59.616Z"}
+{"level":"info","message":"==NAME==: kitchen","timestamp":"2017-12-15T06:24:59.627Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:24:59.628Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:24:59.628Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:24:59.628Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:24:59.628Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:24:59.629Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:24:59.645Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:25:09.548Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:25:09.574Z"}
+{"level":"info","message":"==NAME==: kitchen","timestamp":"2017-12-15T06:25:09.584Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:25:09.584Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:25:09.584Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:25:09.584Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:25:09.585Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:25:09.585Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:25:09.603Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:25:23.227Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:25:23.254Z"}
+{"level":"info","message":"==NAME==: kitchen","timestamp":"2017-12-15T06:25:23.265Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:25:23.266Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:25:23.266Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:25:23.266Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:25:23.266Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:25:23.267Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:25:23.283Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:25:59.838Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:25:59.885Z"}
+{"level":"info","message":"==NAME==: bedroom","timestamp":"2017-12-15T06:25:59.896Z"}
+{"level":"info","message":"==SQUAREFEET==: 789","timestamp":"2017-12-15T06:25:59.896Z"}
+{"level":"info","message":"==FLOORING==: heated tile","timestamp":"2017-12-15T06:25:59.896Z"}
+{"level":"info","message":"==_ID==: 5a336af7b368b678a33496e4","timestamp":"2017-12-15T06:25:59.898Z"}
+{"level":"info","message":"==TIMESTAMP==: Thu Dec 14 2017 22:25:59 GMT-0800 (PST)","timestamp":"2017-12-15T06:25:59.898Z"}
+{"level":"info","message":"POST - responding with a 200 status","timestamp":"2017-12-15T06:25:59.898Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:25:59.915Z"}
+{"level":"info","message":"==NAME==: master bedroom","timestamp":"2017-12-15T06:25:59.916Z"}
+{"level":"info","message":"==SQUAREFEET==: 570","timestamp":"2017-12-15T06:25:59.916Z"}
+{"level":"info","message":"==FLOORING==: heated wood","timestamp":"2017-12-15T06:25:59.916Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:25:59.918Z"}
+{"code":11000,"index":0,"errmsg":"E11000 duplicate key error collection: testing.rooms index: _id_ dup key: { : ObjectId('5a336af7b368b678a33496e6') }","op":{"name":"master bedroom","squareFeet":570,"flooring":"heated wood","house":"5a336af7b368b678a33496e5","_id":"5a336af7b368b678a33496e6","timestamp":"2017-12-15T06:25:59.916Z","__v":0}}
+{"level":"info","message":"Responding with a 409 status code","timestamp":"2017-12-15T06:25:59.919Z"}
+{"level":"info","message":"Processing: POST On: /api/room","timestamp":"2017-12-15T06:25:59.923Z"}
+{"level":"info","message":"==NAME==: kitchen","timestamp":"2017-12-15T06:25:59.923Z"}
+{"level":"info","message":"==SQUAREFEET==: undefined","timestamp":"2017-12-15T06:25:59.923Z"}
+{"level":"info","message":"==FLOORING==: undefined","timestamp":"2017-12-15T06:25:59.923Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:25:59.923Z"}
+{"message":"Bad Request","stack":"BadRequestError: Bad Request\n    at Object.<anonymous>.houseRouter.post (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:19:17)\n    at Layer.handle [as handle_request] (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/express/lib/router/route.js:137:13)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/body-parser/lib/read.js:130:5\n    at invokeCallback (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:224:16)\n    at done (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:213:7)\n    at IncomingMessage.onEnd (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/raw-body/index.js:273:7)\n    at IncomingMessage.emit (events.js:159:13)\n    at endReadableNT (_stream_readable.js:1054:12)\n    at _combinedTickCallback (internal/process/next_tick.js:138:11)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"BadRequestError","level":"error","timestamp":"2017-12-15T06:25:59.924Z"}
+{"level":"info","message":"Responding with a 400 status due to: 'Bad Request'","timestamp":"2017-12-15T06:25:59.924Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:25:59.927Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.928Z"}
+{"level":"info","message":"Processing: GET On: /api/room/undefined","timestamp":"2017-12-15T06:25:59.933Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.934Z"}
+{"level":"info","message":"Processing: GET On: /api/room/moosejaw","timestamp":"2017-12-15T06:25:59.936Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.936Z"}
+{"level":"info","message":"Processing: PUT On: /api/room/undefined","timestamp":"2017-12-15T06:25:59.940Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.940Z"}
+{"level":"info","message":"Processing: PUT On: /api/room/moosejaw","timestamp":"2017-12-15T06:25:59.943Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.943Z"}
+{"level":"info","message":"Processing: DELETE On: /api/room/undefined","timestamp":"2017-12-15T06:25:59.948Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.948Z"}
+{"level":"info","message":"Processing: DELETE On: /api/room/moosejaw","timestamp":"2017-12-15T06:25:59.950Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:25:59.950Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:25:59.952Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:26:18.066Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:26:18.093Z"}
+{"level":"info","message":"Returning a 404 from the catch-all route","timestamp":"2017-12-15T06:26:18.094Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:26:18.111Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:27:26.381Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:27:26.408Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:27:26.418Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at Room.find.limit.then.allHouses (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:40:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T06:27:26.418Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T06:27:26.419Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:27:26.430Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:28:13.748Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:28:13.778Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:28:13.789Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at Room.find.limit.then.allHouses (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:40:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T06:28:13.789Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T06:28:13.790Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:28:13.802Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:28:23.657Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:28:23.690Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:28:23.701Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:28:23.719Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:28:38.975Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:28:39.002Z"}
+{"level":"info","message":"==HOUSES ARRAY==: ","timestamp":"2017-12-15T06:28:39.012Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:28:39.012Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at Room.find.limit.then.allHouses (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:40:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T06:28:39.013Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T06:28:39.013Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:28:39.024Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:30:14.292Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:30:14.323Z"}
+{"level":"info","message":"==ROOMS ARRAY==: ","timestamp":"2017-12-15T06:30:14.333Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:30:14.334Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at Room.find.limit.then.allRooms (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:40:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T06:30:14.334Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T06:30:14.334Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:30:14.346Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:30:29.184Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:30:29.215Z"}
+{"level":"info","message":"==ROOMS ARRAY==: ","timestamp":"2017-12-15T06:30:29.227Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:30:29.228Z"}
+{"message":"no houses listed","stack":"NotFoundError: no houses listed\n    at Room.find.limit.then.allRooms (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/route/room-router.js:40:13)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)","name":"NotFoundError","level":"error","timestamp":"2017-12-15T06:30:29.228Z"}
+{"level":"info","message":"Responding with a 404 status due to: 'no houses listed'","timestamp":"2017-12-15T06:30:29.228Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:30:29.242Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:30:50.207Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:30:50.238Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:31:27.583Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:31:27.672Z"}
+{"level":"info","message":"==ROOMS ARRAY==: { _id: 5a336c3fd8cc967b5c23daa0,\n  name: 'kitchen',\n  squareFeet: 508,\n  flooring: 'granite',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.624Z },{ _id: 5a336c3fd8cc967b5c23daa1,\n  name: 'master bedroom',\n  squareFeet: 606,\n  flooring: 'heated tile',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.624Z },{ _id: 5a336c3fd8cc967b5c23daa2,\n  name: 'garage',\n  squareFeet: 598,\n  flooring: 'heated wood',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.624Z },{ _id: 5a336c3fd8cc967b5c23daa3,\n  name: 'bedroom',\n  squareFeet: 796,\n  flooring: 'tile',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.624Z },{ _id: 5a336c3fd8cc967b5c23daa4,\n  name: 'kitchen',\n  squareFeet: 504,\n  flooring: 'hardwood',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z },{ _id: 5a336c3fd8cc967b5c23daa5,\n  name: 'kitchen',\n  squareFeet: 434,\n  flooring: 'carpet',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z },{ _id: 5a336c3fd8cc967b5c23daa6,\n  name: 'garage',\n  squareFeet: 895,\n  flooring: 'heated wood',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z },{ _id: 5a336c3fd8cc967b5c23daa7,\n  name: 'bathroom',\n  squareFeet: 457,\n  flooring: 'hardwood',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z },{ _id: 5a336c3fd8cc967b5c23daa8,\n  name: 'garage',\n  squareFeet: 400,\n  flooring: 'granite',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z },{ _id: 5a336c3fd8cc967b5c23daa9,\n  name: 'bedroom',\n  squareFeet: 785,\n  flooring: 'tile',\n  house: 5a336c3fd8cc967b5c23da9f,\n  __v: 0,\n  timestamp: 2017-12-15T06:31:27.625Z }","timestamp":"2017-12-15T06:31:27.681Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:31:27.681Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:31:27.691Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:32:34.118Z"}
+{"level":"info","message":"Processing: GET On: /api/room","timestamp":"2017-12-15T06:32:34.202Z"}
+{"level":"info","message":"==ROOMS ARRAY==: { _id: 5a336c821409267bc04a7762,\n  name: 'bathroom',\n  squareFeet: 616,\n  flooring: 'heated tile',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.154Z },{ _id: 5a336c821409267bc04a7763,\n  name: 'kitchen',\n  squareFeet: 545,\n  flooring: 'granite',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.154Z },{ _id: 5a336c821409267bc04a7764,\n  name: 'master bedroom',\n  squareFeet: 170,\n  flooring: 'heated tile',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.154Z },{ _id: 5a336c821409267bc04a7765,\n  name: 'bedroom',\n  squareFeet: 387,\n  flooring: 'carpet',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.154Z },{ _id: 5a336c821409267bc04a7766,\n  name: 'master bedroom',\n  squareFeet: 289,\n  flooring: 'tile',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.154Z },{ _id: 5a336c821409267bc04a7767,\n  name: 'dining area',\n  squareFeet: 382,\n  flooring: 'tile',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.155Z },{ _id: 5a336c821409267bc04a7768,\n  name: 'bathroom',\n  squareFeet: 334,\n  flooring: 'heated wood',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.155Z },{ _id: 5a336c821409267bc04a7769,\n  name: 'master bedroom',\n  squareFeet: 185,\n  flooring: 'granite',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.155Z },{ _id: 5a336c821409267bc04a776a,\n  name: 'garage',\n  squareFeet: 197,\n  flooring: 'granite',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.155Z },{ _id: 5a336c821409267bc04a776b,\n  name: 'master bedroom',\n  squareFeet: 389,\n  flooring: 'granite',\n  house: 5a336c821409267bc04a7761,\n  __v: 0,\n  timestamp: 2017-12-15T06:32:34.155Z }","timestamp":"2017-12-15T06:32:34.210Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:32:34.211Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:32:34.221Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:36:58.029Z"}
+{"level":"info","message":"Processing: GET On: /api/room/undefined","timestamp":"2017-12-15T06:36:58.073Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:36:58.079Z"}
+{"message":"Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"room\"","stack":"CastError: Cast to ObjectId failed for value \"undefined\" at path \"_id\" for model \"room\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOne (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1504:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"undefined\"","kind":"ObjectId","value":"undefined","path":"_id","level":"error","timestamp":"2017-12-15T06:36:58.079Z"}
+{"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T06:36:58.079Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:36:58.088Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:38:57.477Z"}
+{"level":"info","message":"Processing: GET On: /api/room/5a336e01e605077e250e0cc3","timestamp":"2017-12-15T06:38:57.522Z"}
+{"level":"info","message":"==ROOM==: { _id: 5a336e01e605077e250e0cc3,\n  name: 'dining area',\n  squareFeet: 376,\n  flooring: 'granite',\n  house: 5a336e01e605077e250e0cc2,\n  __v: 0,\n  timestamp: 2017-12-15T06:38:57.512Z }","timestamp":"2017-12-15T06:38:57.531Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:38:57.531Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:38:57.543Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:39:20.175Z"}
+{"level":"info","message":"Processing: GET On: /api/room/5a336e18fe24b97e60f718e4","timestamp":"2017-12-15T06:39:20.219Z"}
+{"level":"info","message":"==ROOM==: { _id: 5a336e18fe24b97e60f718e4,\n  name: 'kitchen',\n  squareFeet: 671,\n  flooring: 'heated wood',\n  house: 5a336e18fe24b97e60f718e3,\n  __v: 0,\n  timestamp: 2017-12-15T06:39:20.210Z }","timestamp":"2017-12-15T06:39:20.228Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:39:20.228Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:39:20.239Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:39:38.259Z"}
+{"level":"info","message":"Processing: GET On: /api/room/5a336e2ac757647e948484ab","timestamp":"2017-12-15T06:39:38.316Z"}
+{"level":"info","message":"==ROOM==: { _id: 5a336e2ac757647e948484ab,\n  name: 'bathroom',\n  squareFeet: 769,\n  flooring: 'granite',\n  house: 5a336e2ac757647e948484aa,\n  __v: 0,\n  timestamp: 2017-12-15T06:39:38.302Z }","timestamp":"2017-12-15T06:39:38.328Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:39:38.328Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:39:38.344Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:40:07.259Z"}
+{"level":"info","message":"Processing: GET On: /api/room/5a336e47af505a7ebf8f73a4","timestamp":"2017-12-15T06:40:07.303Z"}
+{"level":"info","message":"==ROOM==: { _id: 5a336e47af505a7ebf8f73a4,\n  name: 'master bedroom',\n  squareFeet: 676,\n  flooring: 'heated wood',\n  house: 5a336e47af505a7ebf8f73a3,\n  __v: 0,\n  timestamp: 2017-12-15T06:40:07.293Z }","timestamp":"2017-12-15T06:40:07.312Z"}
+{"level":"info","message":"GET - responding with a 200 status","timestamp":"2017-12-15T06:40:07.312Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:40:07.322Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:41:23.034Z"}
+{"level":"info","message":"Processing: GET On: /api/room/moosejaw","timestamp":"2017-12-15T06:41:23.061Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:41:23.067Z"}
+{"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"room\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"room\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOne (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1504:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T06:41:23.067Z"}
+{"level":"info","message":"Responding with a 404 status code","timestamp":"2017-12-15T06:41:23.067Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:41:23.084Z"}
+{"level":"info","message":"Server is listening on port: 3000","timestamp":"2017-12-15T06:43:00.006Z"}
+{"level":"info","message":"Processing: GET On: /api/room/moosejaw","timestamp":"2017-12-15T06:43:00.036Z"}
+{"level":"info","message":"__MIDDLEWARE_IS_HANDLING_ERROR__ ","timestamp":"2017-12-15T06:43:00.042Z"}
+{"message":"Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"room\"","stack":"CastError: Cast to ObjectId failed for value \"moosejaw\" at path \"_id\" for model \"room\"\n    at new CastError (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/error/cast.js:27:11)\n    at ObjectId.Object.<anonymous>.ObjectId.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:158:13)\n    at ObjectId.Object.<anonymous>.SchemaType._castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1088:15)\n    at ObjectId.Object.<anonymous>.ObjectId.castForQuery (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schema/objectid.js:198:15)\n    at ObjectId.Object.<anonymous>.SchemaType.castForQueryWrapper (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/schematype.js:1045:15)\n    at cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/cast.js:269:32)\n    at model.Query.Object.<anonymous>.Query.cast (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:3302:12)\n    at model.Query.Object.<anonymous>.Query._castConditions (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1292:10)\n    at model.Query.Object.<anonymous>.Query._findOne (/home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/mongoose/lib/query.js:1504:8)\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:250:8\n    at /home/snobeard/code/401/projects/13-14-Relational-Modeling/lab-matt/node_modules/kareem/index.js:23:7\n    at _combinedTickCallback (internal/process/next_tick.js:131:7)\n    at process._tickCallback (internal/process/next_tick.js:180:9)","name":"CastError","stringValue":"\"moosejaw\"","kind":"ObjectId","value":"moosejaw","path":"_id","level":"error","timestamp":"2017-12-15T06:43:00.042Z"}
+{"level":"info","message":"Responding with a 404 status code - objectid failed","timestamp":"2017-12-15T06:43:00.043Z"}
+{"level":"info","message":"Server is shutting down","timestamp":"2017-12-15T06:43:00.059Z"}

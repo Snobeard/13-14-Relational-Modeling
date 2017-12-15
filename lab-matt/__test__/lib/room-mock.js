@@ -27,7 +27,7 @@ roomMock.create = () => {
     });
 };
 
-roomMock.createMany = (number) => { 
+roomMock.many = (number) => { 
   let mockObject = {};
 
   return houseMock.create()

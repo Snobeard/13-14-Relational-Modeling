@@ -2,65 +2,64 @@
 
 const {Router} = require('express');
 const jsonParser = require('express').json();
-// const jsonParser = require('body-parser').json();
 const httpError = require('http-errors');
 
-const House = require('../model/house');
+const Room = require('../model/room');
 const log = require('../lib/logger');
 
-const houseRouter = module.exports = new Router();
+const roomRouter = module.exports = new Router();
 
 // ===================== POST ROUTES =====================
-houseRouter.post('/api/house', jsonParser, (request, response, next) => {
+roomRouter.post('/api/room', jsonParser, (request, response, next) => {
   log('info', `==NAME==: ${request.body.name}`);
-  log('info', `==STORIES==: ${request.body.stories}`);
-  log('info', `==CLIMATE==: ${request.body.climate}`);
+  log('info', `==SQUAREFEET==: ${request.body.squareFeet}`);
+  log('info', `==FLOORING==: ${request.body.flooring}`);
 
-  if (!request.body.name || !request.body.stories || !request.body.climate) {
-    return next(httpError(400), 'name, stories and climate are require');
+  if (!request.body.name || !request.body.squareFeet || !request.body.flooring) {
+    return next(httpError(400), 'name, squareFeet and flooring are require');
   }
 
-  new House(request.body).save()
-    .then(house => {
-      log('info', `==_ID==: ${house._id}`);
-      log('info', `==TIMESTAMP==: ${house.timestamp}`);
+  new Room(request.body).save()
+    .then(room => {
+      log('info', `==_ID==: ${room._id}`);
+      log('info', `==TIMESTAMP==: ${room.timestamp}`);
       log('info', 'POST - responding with a 200 status');
-      response.json(house);
+      response.json(room);
       return;
     })
     .catch(next);
 });
 
 // ===================== GET ROUTES =====================
-houseRouter.get('/api/house', (request, response, next) => {
-  return House.find({})
+roomRouter.get('/api/room', (request, response, next) => {
+  return Room.find({})
     .limit(10)
-    .then(allHouses => {
-      // log('info', `==HOUSES ARRAY==: ${allHouses}`);
-      if (allHouses.length === 0) {
-        throw httpError(404, 'no houses listed');
+    .then(allRooms => {
+      log('info', `==ROOMS ARRAY==: ${allRooms}`);
+      if (allRooms.length === 0) {
+        throw httpError(404, 'no rooms listed');
       }
       log('info', 'GET - responding with a 200 status');
-      return response.json(allHouses);
+      return response.json(allRooms);
     })
     .catch(next);
 });
 
-houseRouter.get('/api/house/:id', (request, response, next) => {
-  return House.findById(request.params.id)
-    .then(house => {
-      log('info', `==HOUSE==: ${house}`);
-      if (!house) {
-        throw httpError(404, 'house not found');
+roomRouter.get('/api/room/:id', (request, response, next) => {
+  return Room.findById(request.params.id)
+    .then(room => {
+      log('info', `==ROOM==: ${room}`);
+      if (!room) {
+        throw httpError(404, 'room not found');
       }
       log('info', 'GET - responding with a 200 status');
-      return response.json(house);
+      return response.json(room);
     })
     .catch(next);
 });
 
 // ===================== PUT ROUTES =====================
-houseRouter.put('/api/house/:id', jsonParser, (request, response, next) => {
+roomRouter.put('/api/room/:id', jsonParser, (request, response, next) => {
   if (!request.params.id) {
     throw httpError(400, 'no ID given');
   }
@@ -79,7 +78,7 @@ houseRouter.put('/api/house/:id', jsonParser, (request, response, next) => {
 });
 
 // ===================== DELETE ROUTES =====================
-houseRouter.delete('/api/house/:id', (request, response, next) => {
+roomRouter.delete('/api/room/:id', (request, response, next) => {
   if (!request.params.id) {
     throw httpError(400, 'no ID given');
   }

@@ -16,22 +16,22 @@ module.exports = (error, request, response, next) => {
   let message = error.message.toLowerCase();  
 
   if (message.includes('objectid failed')) {
-    log('info', 'Responding with a 404 status code');
+    log('info', 'Responding with a 404 status code - objectid failed');
     return response.sendStatus(404);
   }
 
   if (message.includes('validation failed')) {
-    log('info', 'Responding with a 400 status code');
+    log('info', 'Responding with a 400 status code - validation failed');
     return response.sendStatus(400);
   }
   
   if (message.includes('duplicate key')) {
-    log('info', 'Responding with a 409 status code');
+    log('info', 'Responding with a 409 status code - duplicate key');
     return response.sendStatus(409);
   }
 
   if (message.includes('unauthorized')) {
-    log('info', 'Responding with a 401 status code');
+    log('info', 'Responding with a 401 status code - unauthorized');
     return response.sendStatus(401);
   }
 
