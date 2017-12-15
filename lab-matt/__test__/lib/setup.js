@@ -1,4 +1,4 @@
 'use strict';
 
-let PORT = 4000;
-let MONGODB_URI = 'http://localhost/testing';
+process.env.PORT = 3000;
+process.env.MONGODB_URI = 'mongodb://localhost/testing';

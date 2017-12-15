@@ -3,11 +3,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const log = require('./logger');
-require('dotenv').config();
 
 // ================ ENV VALUES ===================
-const MONGODB_URI = process.env.MONGODB_URI;
 const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // ================ MONGO DB SETUP ===================
 mongoose.Promise = Promise;
