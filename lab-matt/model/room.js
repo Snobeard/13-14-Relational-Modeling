@@ -28,8 +28,6 @@ const roomSchema = mongoose.Schema({
   }, 
 });
 
-module.exports = mongoose.model('room', roomSchema);
-
 roomSchema.pre('save', function(done){
 
   return House.findById(this.house)
@@ -37,7 +35,7 @@ roomSchema.pre('save', function(done){
       if (!houseFound) {
         throw httpError(404, 'no house listed');
       }
-      houseFound.notes.push(this._id);
+      houseFound.rooms.push(this._id);
       return houseFound.save();
     })
     .then(() => {
@@ -54,7 +52,7 @@ roomSchema.post('remove', (document, done) => {
       if (!houseFound) {
         throw httpError(404, 'no house listed');
       }
-      houseFound.notes = houseFound.notes.filter((note) => {
+      houseFound.rooms = houseFound.rooms.filter((note) => {
         return note._id.toString() !== document._id.toString();
       });
     })
@@ -62,3 +60,6 @@ roomSchema.post('remove', (document, done) => {
     .catch(done);
     
 });
+
+// mattL - !IMPORTANT_module.exports needs to be below the '.pre' and '.post'
+module.exports = mongoose.model('room', roomSchema);

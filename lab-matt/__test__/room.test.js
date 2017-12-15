@@ -123,7 +123,9 @@ describe('/api/room', () => {
           expect(response.body.name).toEqual(roomAndHouse.room.name);
           expect(response.body.squareFeet).toEqual(roomAndHouse.room.squareFeet);
           expect(response.body.flooring).toEqual(roomAndHouse.room.flooring);
-          expect(response.body.house).toEqual(roomAndHouse.house._id.toString());
+
+          // mattL - this line checks to see if the house has the room id in its list
+          expect(response.body.house.rooms[0]).toEqual(roomAndHouse.room._id.toString());
         });
     });
 

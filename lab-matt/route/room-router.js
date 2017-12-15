@@ -49,6 +49,7 @@ roomRouter.get('/api/room', (request, response, next) => {
 
 roomRouter.get('/api/room/:id', (request, response, next) => {
   return Room.findById(request.params.id)
+    .populate('house')
     .then(room => {
       log('info', `==ROOM==: ${room}`);
       if (!room) {

@@ -18,8 +18,8 @@ const app = express();
 
 // ================ ROUTE SETUP ===================
 app.use(require('./logger-middleware'));
-app.use(require('../route/house-router'));
 app.use(require('../route/room-router'));
+app.use(require('../route/house-router'));
 
 app.all('*', (request, response) => {
   log('info', 'Returning a 404 from the catch-all route');
