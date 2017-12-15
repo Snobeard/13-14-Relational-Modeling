@@ -11,7 +11,7 @@ const logger = new (winston.Logger)({
       level: 'silly',  // logs ALL
     }),
     new (winston.transports.Console)({
-      level: 'info', // logs 'error' | 'warn' | 'info'
+      level: 'verbose', // logs 'info' | 'warn' | 'verbose'
     }),
   ],
 });

@@ -81,7 +81,7 @@ describe('/api/room', () => {
 
   // ===================== GET =====================
   describe('GET /api/room', () => {
-    test('GET should respond with 404 if no houses are listed', () => {
+    test('GET should respond with 404 if no rooms are listed', () => {
       return superagent.get(__API_URL__)
         .then(response => {
           console.log('this should not show', response);
@@ -91,7 +91,7 @@ describe('/api/room', () => {
         });
     });
 
-    test('GET should respond with 200 and array of houses, up to 10', () => {
+    test('GET should respond with 200 and array of rooms, up to 10', () => {
       return roomMock.many(100)
         .then(() => {
           return superagent.get(__API_URL__);

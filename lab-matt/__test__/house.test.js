@@ -142,7 +142,8 @@ describe('/api/house', () => {
           expect(response.status).toEqual(200);
 
           expect(response.body.name).toEqual('BIG MANSION');
-          expect(response.body.legs).toEqual(housePut.legs);
+          expect(response.body.stories).toEqual(housePut.stories);
+          expect(response.body.climate).toEqual(housePut.climate);
           expect(response.body._id).toEqual(housePut._id.toString());
           expect(response.body.timestamp).not.toBeNull();
         });
