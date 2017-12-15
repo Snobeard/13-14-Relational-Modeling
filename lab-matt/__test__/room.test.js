@@ -40,7 +40,7 @@ describe('/api/room', () => {
               expect(response.body.stories).toEqual(roomToPost.stories);
               expect(response.body.climate).toEqual(roomToPost.climate);
 
-              expect(response.body.house).toEqual(roomToPost.house._id);
+              expect(response.body.house).toEqual(house._id.toString());
             });
         });
     });
@@ -141,21 +141,22 @@ describe('/api/room', () => {
   // ===================== PUT =====================
   describe('PUT /api/room/:id', () => {
     test('PUT should respond with 200 and data if no error and data should be updated', () => {
-      let housePut = null;
+      let roomAndHouse = null;
 
       return roomMock.create()
-        .then(house => {
-          housePut = house;
-          return superagent.put(`${__API_URL__}/${house._id}`)
-            .send({name: 'BIG MANSION'});
+        .then(mockObject => {
+          roomAndHouse = mockObject;
+          return superagent.put(`${__API_URL__}/${mockObject.room._id}`)
+            .send({name: 'THEATRE ROOM!'});
         })
         .then(response => {
           expect(response.status).toEqual(200);
 
-          expect(response.body.name).toEqual('BIG MANSION');
-          expect(response.body.legs).toEqual(housePut.legs);
-          expect(response.body._id).toEqual(housePut._id.toString());
+          expect(response.body.name).toEqual('THEATRE ROOM!');
+          expect(response.body.squareFeet).toEqual(roomAndHouse.room.squareFeet);
+          expect(response.body._id).toEqual(roomAndHouse.room._id.toString());
           expect(response.body.timestamp).not.toBeNull();
+          expect(response.body.house).toEqual(roomAndHouse.house._id.toString());
         });
     });
 
@@ -169,21 +170,22 @@ describe('/api/room', () => {
         });
     });
     
-    test('PUT should respond with 409 if you are trying to use a name that already exists', () => {
-      return roomMock.many(2)
-        .then(houses => {
-          return superagent.put(`${__API_URL__}/${houses[0]._id}`)
-            .send({
-              name: houses[1].name,
-            });
-        })
-        .then(response => {
-          expect(response).toEqual('nothing because this will not show');
-        })
-        .catch(error => {
-          expect(error.status).toEqual(409);
-        });
-    });
+    // test('PUT should respond with 409 if you have unique properties', () => {
+    //   return roomMock.many(2)
+    //     .then(mockObject => {
+    //       console.log(mockObject);
+    //       return superagent.put(`${__API_URL__}/${mockObject.rooms[0]._id}`)
+    //         .send({
+    //           _id: mockObject.rooms[1]._id,
+    //         });
+    //     })
+    //     .then(response => {
+    //       expect(response).toEqual('nothing because this will not show');
+    //     })
+    //     .catch(error => {
+    //       expect(error.status).toEqual(409);
+    //     });
+    // });
   });
 
   // ===================== DELETE =====================
@@ -191,8 +193,8 @@ describe('/api/room', () => {
     test('DELETE should respond with 204 and data if no error', () => {
 
       return roomMock.create()
-        .then(house => {
-          return superagent.delete(`${__API_URL__}/${house._id}`);
+        .then(mockObject => {
+          return superagent.delete(`${__API_URL__}/${mockObject.room._id}`);
         })
         .then(response => {
           expect(response.status).toEqual(204);

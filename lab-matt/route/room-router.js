@@ -14,6 +14,8 @@ roomRouter.post('/api/room', jsonParser, (request, response, next) => {
   log('info', `==NAME==: ${request.body.name}`);
   log('info', `==SQUAREFEET==: ${request.body.squareFeet}`);
   log('info', `==FLOORING==: ${request.body.flooring}`);
+  log('info', `==HOUSEID==: ${request.body.house}`);
+  
 
   if (!request.body.name || !request.body.squareFeet || !request.body.flooring) {
     return next(httpError(400), 'name, squareFeet and flooring are require');
@@ -64,14 +66,13 @@ roomRouter.put('/api/room/:id', jsonParser, (request, response, next) => {
     throw httpError(400, 'no ID given');
   }
   let updateOptions = {runValidators: true, new: true};
-
-  return House.findByIdAndUpdate(request.params.id, request.body, updateOptions)
-    .then(house => {
-      if (!house) {
-        throw httpError(404, 'house not found');
+  return Room.findByIdAndUpdate(request.params.id, request.body, updateOptions)
+    .then(room => {
+      if (!room) {
+        throw httpError(404, 'room not found');
       } else {
         log('info', 'PUT - responding with a 200 status');
-        return response.json(house);
+        return response.json(room);
       }
     })
     .catch(next);
@@ -83,10 +84,10 @@ roomRouter.delete('/api/room/:id', (request, response, next) => {
     throw httpError(400, 'no ID given');
   }
 
-  return House.findByIdAndRemove(request.params.id)
-    .then(house => {
-      if (!house) {
-        throw httpError(404, 'house not found');
+  return Room.findByIdAndRemove(request.params.id)
+    .then(room => {
+      if (!room) {
+        throw httpError(404, 'room not found');
       } else {
         log('info', 'DELETE - responding with a 204 status');
         return response.sendStatus(204);
