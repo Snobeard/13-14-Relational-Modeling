@@ -20,7 +20,8 @@ This lab implements creation of an http server using express.js using mongodb/mo
 ## Usage
 1. `cd` into the lab-matt folder
 2. `npm install` the required dependency packages
-3. setup a `.env` file with the values
+3. `.env` values are automatically setup for jest testing</br>
+they will be required for non-testing purposes
 ```
 PORT=3000
 MONGODB_URI=mongodb://localhost/testing
