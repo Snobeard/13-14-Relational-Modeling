@@ -108,7 +108,6 @@ describe('/api/house', () => {
           expect(response.body).toBeInstanceOf(Array);
         });
     });
-
   });
 
   describe('GET /api/house/:id', () => {
@@ -171,6 +170,27 @@ describe('/api/house', () => {
         })
         .catch(error => {
           expect(error.status).toEqual(404);
+        });
+    });
+    
+    test('PUT should respond with 409 if you are trying to use a name that already exists', () => {
+      let firstHouse = null;
+      
+      return houseCreate()
+        .then(house => {
+          houseCreate().then(house => firstHouse = house);
+          return superagent.post(`${apiURL}`)
+            .send({
+              name: house.name,
+              stories: house.stories,
+              climate: house.climate,
+            });
+        })
+        .then(response => {
+          expect(response).toEqual('nothing because this will not show');
+        })
+        .catch(error => {
+          expect(error.status).toEqual(409);
         });
     });
   });

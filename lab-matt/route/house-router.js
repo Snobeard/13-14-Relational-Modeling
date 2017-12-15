@@ -36,7 +36,7 @@ houseRouter.get('/api/house', (request, response, next) => {
   return House.find({})
     .limit(10)
     .then(allHouses => {
-      log('info', `==HOUSES ARRAY==: ${allHouses}`);
+      // log('info', `==HOUSES ARRAY==: ${allHouses}`);
       if (allHouses.length === 0) {
         throw httpErrors(404, 'no houses listed');
       }
